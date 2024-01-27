@@ -6,7 +6,7 @@ body {
   background-color: #0d1117;
   color: white;
   font-family: "Courier New", monospace;
-  background-image: url("imagem_do_background.jpg");
+  background-image: url("imagem.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
