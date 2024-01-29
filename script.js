@@ -41,6 +41,7 @@ function (criptografar) {
         let letra =input[u];
         //aqui adiciona a letra modificada na lista
         resultados.push (letra)
+
+       alert (resultados)
     }
-        getElementById (processar).addEventListener("click", criptografar)
-        alert resultado
+        document.getElementById("processar").addEventListener("click", criptografar)
