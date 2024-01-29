@@ -1,5 +1,6 @@
 * {
   text-align: center;
+  box-sizing: border-box;
 }
 
 body {
@@ -11,26 +12,32 @@ body {
   background-repeat: no-repeat;
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
   filter: brightness(150%);
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   font-size: 36px;
 }
 
-p {
-  font-weight: bold;
+label {
+  display: block;
+  margin: 10px 0 5px;
 }
 
-input, textarea, button {
+textarea, select, button {
   border: 2px solid white;
   background-color: #0d1117;
   color: white;
   font-family: "Courier New", monospace;
   font-size: 18px;
+  width: 80%;
+  margin: 5px 0;
+  padding: 8px;
 }
 
-input, textarea {
-  width: 80%;
+select {
+  width: 82%; /* Slightly wider to accommodate the arrow */
 }
 
 textarea {
@@ -38,8 +45,8 @@ textarea {
 }
 
 button {
-  width: 60%;
-  margin: 10px;
+  width: 80%;
+  margin: 10px 0;
   overflow: hidden;
 }
 
@@ -47,36 +54,17 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .box {
-  box-sizing: border-box;
   border: 2px solid white;
-  padding: 10px;
+  padding: 15px;
   margin: 10px;
   background-color: #161b22;
-}
-
-.banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-}
-
-.banner img {
-  width: 80%;
-  height: 150px;
-  border: 2px solid white;
 }
 
 .footer {
   font-size: 14px;
   margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 24px;
-  }
 }
