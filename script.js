@@ -59,3 +59,12 @@ function descriptar() {
 
     document.getElementById("saida").value = resultados.join('');
 }
+
+function copiar() {
+    let saida = document.getElementById("saida");
+    saida.select();
+    document.execCommand("copy");
+    document.getElementById("saida").value = "";
+    document.getElementById("entrada").value = "";
+}
+document.getElementById("copiar").addEventListener("click", copiar);
