@@ -1,47 +1,42 @@
-let resultados =[];
-function (criptografar) {
-   let a = ai;
-    let e = enter;
-    let i = imes;
-    let o = ober;
-    let u = ufat;
-    let input = getElementeById ("input").value;
-    console.log (input)
-    //aqui verifica elemento por elemento no campo input
-    for (a=0; a<input.length; a++){
-        //aqui modifica a letra
-        let letra =input[a];
-        //aqui adiciona a letra modificada na lista
-        resultados.push (letra)
-        
-         //aqui verifica elemento por elemento no campo input
-    for (e=0; a<input.length; e++){
-        //aqui modifica a letra
-        let letra =input[e];
-        //aqui adiciona a letra modificada na lista
-        resultados.push (letra)
-        
-         //aqui verifica elemento por elemento no campo input
-    for (i=0; a<input.length; i++){
-        //aqui modifica a letra
-        let letra =input[i];
-        //aqui adiciona a letra modificada na lista
-        resultados.push (letra)
-        
-         //aqui verifica elemento por elemento no campo input
-    for (o=0; a<input.length; a++){
-        //aqui modifica a letra
-        let letra =input[o];
-        //aqui adiciona a letra modificada na lista
-        resultados.push (letra)
-        
-         //aqui verifica elemento por elemento no campo input
-    for (u=0; a<input.length; u++){
-        //aqui modifica a letra
-        let letra =input[u];
-        //aqui adiciona a letra modificada na lista
-        resultados.push (letra)
+if (document.getElementById("operacao").value == "criptografar"){
+document.getElementById("processar").addEventListener("click", encriptar);
 
-       alert (resultados)
+function encriptar() {
+    let a = 'ai';
+    let e = 'enter';
+    let i = 'imes';
+    let o = 'ober';
+    let u = 'ufat';
+
+    let input = document.getElementById("entrada").value.toLowerCase();
+    console.log(input);
+
+    let resultados = [];
+
+    for (let index = 0; index < input.length; index++) {
+        switch (input[index]) {
+            case 'a':
+                resultados.push(a);
+                break;
+            case 'e':
+                resultados.push(e);
+                break;
+            case 'i':
+                resultados.push(i);
+                break;
+            case 'o':
+                resultados.push(o);
+                break;
+            case 'u':
+                resultados.push(u);
+                break;
+            default:
+                resultados.push(input[index]);
+        }
     }
-        document.getElementById("processar").addEventListener("click", criptografar)
+
+    document.getElementById("saida").value = resultados.join('');
+}
+}
+else if (document.getElementById("operacao").value == "criptografar"){document.getElementById("saida").value = ""}
+else {"alert seleciona uma opcao"}
