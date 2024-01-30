@@ -1,42 +1,61 @@
-if (document.getElementById("operacao").value == "criptografar"){
-document.getElementById("processar").addEventListener("click", encriptar);
+document.getElementById("encriptar").addEventListener("click", encriptar);
+document.getElementById("descriptar").addEventListener("click", descriptar);
+
+// Defina suas substituições
+let substituicoes = {
+    'a': 'ai',
+    'e': 'enter',
+    'i': 'imes',
+    'o': 'ober',
+    'u': 'ufat'
+};
 
 function encriptar() {
-    let a = 'ai';
-    let e = 'enter';
-    let i = 'imes';
-    let o = 'ober';
-    let u = 'ufat';
-
     let input = document.getElementById("entrada").value.toLowerCase();
     console.log(input);
 
     let resultados = [];
 
     for (let index = 0; index < input.length; index++) {
-        switch (input[index]) {
-            case 'a':
-                resultados.push(a);
-                break;
-            case 'e':
-                resultados.push(e);
-                break;
-            case 'i':
-                resultados.push(i);
-                break;
-            case 'o':
-                resultados.push(o);
-                break;
-            case 'u':
-                resultados.push(u);
-                break;
-            default:
-                resultados.push(input[index]);
+        let letra = input[index];
+
+        // Verifica se há uma substituição para a letra atual
+        if (substituicoes[letra]) {
+            resultados.push(substituicoes[letra]);
+        } else {
+            resultados.push(letra);
         }
     }
 
     document.getElementById("saida").value = resultados.join('');
 }
+
+function descriptar() {
+    let input = document.getElementById("entrada").value.toLowerCase();
+    console.log(input);
+
+    let resultados = [];
+    let index = 0;
+
+    while (index < input.length) {
+        let sequenciaEncontrada = false;
+
+        // Verifica se há uma substituição reversa para a sequência atual
+        for (let substituicao in substituicoes) {
+            if (input.startsWith(substituicoes[substituicao], index)) {
+                resultados.push(substituicao);
+                index += substituicoes[substituicao].length;
+                sequenciaEncontrada = true;
+                break;
+            }
+        }
+
+        // Se não houver substituição reversa, mantém a letra original
+        if (!sequenciaEncontrada) {
+            resultados.push(input[index]);
+            index++;
+        }
+    }
+
+    document.getElementById("saida").value = resultados.join('');
 }
-else if (document.getElementById("operacao").value == "criptografar"){document.getElementById("saida").value = ""}
-else {"alert seleciona uma opcao"}
